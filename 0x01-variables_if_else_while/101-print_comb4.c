@@ -7,17 +7,25 @@ int main(void)
 {
 	int i;
 	int j;
+	int n;
 
 	for (i = 0 ; i < 10 ; i++)
 	{
 		for (j = 1 ; j < 10 ; j++)
 		{
-			if (i < j && i != j)
+			for (n = 2 ; n < 10 ; n++)
 			{
-				putchar(i + '0');
-				putchar(j + '0');
-				putchar(',');
-				putchar(' ');
+				if (i < j && j < n)
+				{
+					putchar(i + '0');
+					putchar(j + '0');
+					putchar(n + '0');
+					if (i + j + n != 24)
+					{
+						putchar(',');
+						putchar(' ');
+					}
+				}
 			}
 		}
 	}
